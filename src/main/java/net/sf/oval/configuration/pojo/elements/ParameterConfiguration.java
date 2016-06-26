@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2011 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  * 
  * All Rights Reserved. This program and the accompanying materials
@@ -20,32 +20,29 @@ import net.sf.oval.CheckExclusion;
 /**
  * @author Sebastian Thomschke
  */
-public class ParameterConfiguration extends ConfigurationElement
-{
-	private static final long serialVersionUID = 1L;
+public class ParameterConfiguration extends ConfigurationElement {
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * the type of the parameter
-	 */
-	public Class< ? > type;
+    /**
+     * the type of the parameter
+     */
+    public Class<?> type;
 
-	/**
-	 * the checks for the parameter
-	 */
-	public List<Check> checks;
+    /**
+     * the checks for the parameter
+     */
+    public List<Check> checks;
 
-	/**
-	 * the check exclusions for the parameter
-	 */
-	public List<CheckExclusion> checkExclusions;
+    /**
+     * the check exclusions for the parameter
+     */
+    public List<CheckExclusion> checkExclusions;
 
-	public boolean hasCheckExclusions()
-	{
-		return checkExclusions != null && checkExclusions.size() > 0;
-	}
+    public boolean hasCheckExclusions() {
+        return checkExclusions != null && checkExclusions.size() > 0;
+    }
 
-	public boolean hasChecks()
-	{
-		return checks != null && checks.size() > 0;
-	}
+    public boolean hasChecks() {
+        return checks != null && checks.size() > 0;
+    }
 }

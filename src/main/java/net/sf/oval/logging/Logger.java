@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2011 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  * 
  * All Rights Reserved. This program and the accompanying materials
@@ -15,35 +15,34 @@ package net.sf.oval.logging;
 /**
  * @author Sebastian Thomschke
  */
-public interface Logger
-{
-	void debug(String msg);
+public interface Logger {
+    void debug(String msg);
 
-	void debug(String msg, Throwable t);
+    void debug(String msg, Throwable t);
 
-	void error(String msg);
+    void error(String msg);
 
-	void error(String msg, Throwable t);
+    void error(String msg, Throwable t);
 
-	void info(String msg);
+    void info(String msg);
 
-	void info(String msg, Throwable t);
+    void info(String msg, Throwable t);
 
-	boolean isDebug();
+    boolean isDebug();
 
-	boolean isError();
+    boolean isError();
 
-	boolean isInfo();
+    boolean isInfo();
 
-	boolean isTrace();
+    boolean isTrace();
 
-	boolean isWarn();
+    boolean isWarn();
 
-	void trace(String msg);
+    void trace(String msg);
 
-	void trace(String msg, Throwable t);
+    void trace(String msg, Throwable t);
 
-	void warn(String msg);
+    void warn(String msg);
 
-	void warn(String msg, Throwable t);
+    void warn(String msg, Throwable t);
 }

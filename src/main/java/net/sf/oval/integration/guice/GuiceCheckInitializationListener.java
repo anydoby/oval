@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2011 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  *
  * All Rights Reserved. This program and the accompanying materials
@@ -25,23 +25,19 @@ import com.google.inject.Injector;
  *
  * @author Sebastian Thomschke
  */
-public class GuiceCheckInitializationListener implements CheckInitializationListener
-{
-	private final Injector injector;
+public class GuiceCheckInitializationListener implements CheckInitializationListener {
+    private final Injector injector;
 
-	public GuiceCheckInitializationListener(final Injector injector)
-	{
-		this.injector = injector;
-	}
+    public GuiceCheckInitializationListener(final Injector injector) {
+        this.injector = injector;
+    }
 
-	public void onCheckInitialized(final Check check)
-	{
-		injector.injectMembers(check);
+    public void onCheckInitialized(final Check check) {
+        injector.injectMembers(check);
 
-		if (check instanceof CheckWithCheck)
-		{
-			final CheckWithCheck checkWith = (CheckWithCheck) check;
-			injector.injectMembers(checkWith.getSimpleCheck());
-		}
-	}
+        if (check instanceof CheckWithCheck) {
+            final CheckWithCheck checkWith = (CheckWithCheck) check;
+            injector.injectMembers(checkWith.getSimpleCheck());
+        }
+    }
 }

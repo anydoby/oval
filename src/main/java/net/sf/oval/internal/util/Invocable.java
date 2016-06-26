@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2011 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  * 
  * All Rights Reserved. This program and the accompanying materials
@@ -16,7 +16,6 @@ package net.sf.oval.internal.util;
  * @author Sebastian Thomschke
  *
  */
-public interface Invocable
-{
-	Object invoke() throws Throwable;
+public interface Invocable {
+    Object invoke() throws Throwable;
 }

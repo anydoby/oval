@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2010 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  * 
  * All Rights Reserved. This program and the accompanying materials
@@ -17,16 +17,14 @@ import net.sf.oval.constraint.NoSelfReferenceCheck;
 /**
  * @author Sebastian Thomschke
  */
-public class NoSelfReferenceTest extends AbstractContraintsTest
-{
-	public void testNoSelfReference()
-	{
-		final NoSelfReferenceCheck check = new NoSelfReferenceCheck();
-		super.testCheck(check);
-		assertTrue(check.isSatisfied(null, null, null, null));
+public class NoSelfReferenceTest extends AbstractContraintsTest {
+    public void testNoSelfReference() {
+        final NoSelfReferenceCheck check = new NoSelfReferenceCheck();
+        super.testCheck(check);
+        assertTrue(check.isSatisfied(null, null, null, null));
 
-		assertTrue(check.isSatisfied(this, null, null, null));
-		assertFalse(check.isSatisfied(this, this, null, null));
-		assertTrue(check.isSatisfied(this, "bla", null, null));
-	}
+        assertTrue(check.isSatisfied(this, null, null, null));
+        assertFalse(check.isSatisfied(this, this, null, null));
+        assertTrue(check.isSatisfied(this, "bla", null, null));
+    }
 }

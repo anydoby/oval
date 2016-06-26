@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2011 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  * 
  * All Rights Reserved. This program and the accompanying materials
@@ -15,11 +15,10 @@ package net.sf.oval.localization.value;
 /**
  * @author Sebastian Thomschke
  */
-public interface MessageValueFormatter
-{
-	/**
-	 * @param value
-	 * @return a string representation of the given value object
-	 */
-	String format(Object value);
+public interface MessageValueFormatter {
+    /**
+     * @param value
+     * @return a string representation of the given value object
+     */
+    String format(Object value);
 }

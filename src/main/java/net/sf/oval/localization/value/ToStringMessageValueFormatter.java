@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2013 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  *
  * All Rights Reserved. This program and the accompanying materials
@@ -15,13 +15,12 @@ package net.sf.oval.localization.value;
 /**
  * @author Sebastian Thomschke
  */
-public class ToStringMessageValueFormatter implements MessageValueFormatter
-{
-	public static final ToStringMessageValueFormatter INSTANCE = new ToStringMessageValueFormatter();
+public class ToStringMessageValueFormatter implements MessageValueFormatter {
+    public static final ToStringMessageValueFormatter INSTANCE = new ToStringMessageValueFormatter();
 
-	public String format(final Object value)
-	{
-		if (value == null) return "null";
-		return value.toString();
-	}
+    public String format(final Object value) {
+        if (value == null)
+            return "null";
+        return value.toString();
+    }
 }

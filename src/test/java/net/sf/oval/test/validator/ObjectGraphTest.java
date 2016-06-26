@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2010 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  * 
  * All Rights Reserved. This program and the accompanying materials
@@ -23,43 +23,38 @@ import net.sf.oval.constraint.NotNull;
 /**
  * @author Sebastian Thomschke
  */
-public class ObjectGraphTest extends TestCase
-{
-	protected static class ClassA
-	{
-		@AssertValid
-		ClassB classB;
+public class ObjectGraphTest extends TestCase {
+    protected static class ClassA {
+        @AssertValid
+        ClassB classB;
 
-		@AssertValid
-		ClassC classC;
-	}
+        @AssertValid
+        ClassC classC;
+    }
 
-	protected static class ClassB
-	{
-		@AssertValid
-		ClassC classC;
-	}
+    protected static class ClassB {
+        @AssertValid
+        ClassC classC;
+    }
 
-	protected static class ClassC
-	{
-		@AssertValid
-		ClassA classA;
+    protected static class ClassC {
+        @AssertValid
+        ClassA classA;
 
-		@NotNull
-		String name;
-	}
+        @NotNull
+        String name;
+    }
 
-	public void testObjectGraph()
-	{
-		final ClassA classA = new ClassA();
-		classA.classB = new ClassB();
-		classA.classC = new ClassC();
-		classA.classC.classA = classA;
-		classA.classB.classC = classA.classC;
+    public void testObjectGraph() {
+        final ClassA classA = new ClassA();
+        classA.classB = new ClassB();
+        classA.classC = new ClassC();
+        classA.classC.classA = classA;
+        classA.classB.classC = classA.classC;
 
-		final Validator validator = new Validator();
-		final List<ConstraintViolation> violations = validator.validate(classA);
-		assertEquals(1, violations.size());
-	}
+        final Validator validator = new Validator();
+        final List<ConstraintViolation> violations = validator.validate(classA);
+        assertEquals(1, violations.size());
+    }
 
 }

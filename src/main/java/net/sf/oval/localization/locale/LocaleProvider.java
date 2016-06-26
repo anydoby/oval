@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2013 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  *
  * All Rights Reserved. This program and the accompanying materials
@@ -17,7 +17,6 @@ import java.util.Locale;
 /**
  * @author Sebastian Thomschke
  */
-public interface LocaleProvider
-{
-	Locale getLocale();
+public interface LocaleProvider {
+    Locale getLocale();
 }

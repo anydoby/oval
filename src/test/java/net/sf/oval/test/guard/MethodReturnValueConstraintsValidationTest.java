@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2010 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  * 
  * All Rights Reserved. This program and the accompanying materials
@@ -22,56 +22,46 @@ import net.sf.oval.guard.Guarded;
 /**
  * @author Sebastian Thomschke
  */
-public class MethodReturnValueConstraintsValidationTest extends TestCase
-{
-	@Guarded
-	public static class TestEntity
-	{
-		protected String name = "";
+public class MethodReturnValueConstraintsValidationTest extends TestCase {
+    @Guarded
+    public static class TestEntity {
+        protected String name = "";
 
-		/* we explicitly use _this.name here to check for circular issues, since OGNL and other 
-		 * scripting languages (Groovy, MVEL, ...) will invoke the getter themselves to retrieve the property value
-		 * and will not directly access the field
-		 */
-		@Assert(expr = "_this.name != null", lang = "bsh", message = "NOT_NULL")
-		@Length(max = 4, message = "LENGTH")
-		public String getName()
-		{
-			return name;
-		}
-	}
+        /* we explicitly use _this.name here to check for circular issues, since OGNL and other 
+         * scripting languages (Groovy, MVEL, ...) will invoke the getter themselves to retrieve the property value
+         * and will not directly access the field
+         */
+        @Assert(expr = "_this.name != null", lang = "bsh", message = "NOT_NULL")
+        @Length(max = 4, message = "LENGTH")
+        public String getName() {
+            return name;
+        }
+    }
 
-	public void testMethodReturnValueConstraintValidation()
-	{
-		final Guard guard = new Guard();
+    public void testMethodReturnValueConstraintValidation() {
+        final Guard guard = new Guard();
 
-		TestGuardAspect.aspectOf().setGuard(guard);
+        TestGuardAspect.aspectOf().setGuard(guard);
 
-		final TestEntity t = new TestEntity();
+        final TestEntity t = new TestEntity();
 
-		try
-		{
-			t.name = null;
-			t.getName();
-			fail();
-		}
-		catch (final ConstraintsViolatedException e)
-		{
-			assertTrue(e.getConstraintViolations().length == 1);
-			assertTrue(e.getConstraintViolations()[0].getMessage().equals("NOT_NULL"));
-		}
+        try {
+            t.name = null;
+            t.getName();
+            fail();
+        } catch (final ConstraintsViolatedException e) {
+            assertTrue(e.getConstraintViolations().length == 1);
+            assertTrue(e.getConstraintViolations()[0].getMessage().equals("NOT_NULL"));
+        }
 
-		t.name = "testtest";
+        t.name = "testtest";
 
-		try
-		{
-			t.getName();
-			fail();
-		}
-		catch (final ConstraintsViolatedException e)
-		{
-			assertTrue(e.getConstraintViolations().length == 1);
-			assertTrue(e.getConstraintViolations()[0].getMessage().equals("LENGTH"));
-		}
-	}
+        try {
+            t.getName();
+            fail();
+        } catch (final ConstraintsViolatedException e) {
+            assertTrue(e.getConstraintViolations().length == 1);
+            assertTrue(e.getConstraintViolations()[0].getMessage().equals("LENGTH"));
+        }
+    }
 }

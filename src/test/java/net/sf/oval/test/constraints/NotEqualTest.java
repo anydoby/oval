@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2010 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  * 
  * All Rights Reserved. This program and the accompanying materials
@@ -17,23 +17,21 @@ import net.sf.oval.constraint.NotEqualCheck;
 /**
  * @author Sebastian Thomschke
  */
-public class NotEqualTest extends AbstractContraintsTest
-{
-	public void testNotEqual()
-	{
-		final NotEqualCheck check = new NotEqualCheck();
-		super.testCheck(check);
-		assertTrue(check.isSatisfied(null, null, null, null));
+public class NotEqualTest extends AbstractContraintsTest {
+    public void testNotEqual() {
+        final NotEqualCheck check = new NotEqualCheck();
+        super.testCheck(check);
+        assertTrue(check.isSatisfied(null, null, null, null));
 
-		check.setTestString("TEST");
-		check.setIgnoreCase(false);
-		assertTrue(check.isSatisfied(null, 10, null, null));
-		assertTrue(check.isSatisfied(null, "", null, null));
-		assertTrue(check.isSatisfied(null, "test", null, null));
-		assertFalse(check.isSatisfied(null, "TEST", null, null));
+        check.setTestString("TEST");
+        check.setIgnoreCase(false);
+        assertTrue(check.isSatisfied(null, 10, null, null));
+        assertTrue(check.isSatisfied(null, "", null, null));
+        assertTrue(check.isSatisfied(null, "test", null, null));
+        assertFalse(check.isSatisfied(null, "TEST", null, null));
 
-		check.setIgnoreCase(true);
-		assertFalse(check.isSatisfied(null, "test", null, null));
-		assertFalse(check.isSatisfied(null, "TEST", null, null));
-	}
+        check.setIgnoreCase(true);
+        assertFalse(check.isSatisfied(null, "test", null, null));
+        assertFalse(check.isSatisfied(null, "TEST", null, null));
+    }
 }

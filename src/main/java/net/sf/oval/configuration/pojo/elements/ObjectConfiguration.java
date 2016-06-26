@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2011 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  * 
  * All Rights Reserved. This program and the accompanying materials
@@ -19,12 +19,11 @@ import net.sf.oval.Check;
 /**
  * @author Sebastian Thomschke
  */
-public class ObjectConfiguration extends ConfigurationElement
-{
-	private static final long serialVersionUID = 1L;
+public class ObjectConfiguration extends ConfigurationElement {
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * object level checks
-	 */
-	public List<Check> checks;
+    /**
+     * object level checks
+     */
+    public List<Check> checks;
 }

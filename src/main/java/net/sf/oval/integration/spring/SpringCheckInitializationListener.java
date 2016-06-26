@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2011 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  *
  * All Rights Reserved. This program and the accompanying materials
@@ -25,18 +25,15 @@ import net.sf.oval.constraint.CheckWithCheck;
  *
  * @author Sebastian Thomschke
  */
-public class SpringCheckInitializationListener implements CheckInitializationListener
-{
-	public static final SpringCheckInitializationListener INSTANCE = new SpringCheckInitializationListener();
+public class SpringCheckInitializationListener implements CheckInitializationListener {
+    public static final SpringCheckInitializationListener INSTANCE = new SpringCheckInitializationListener();
 
-	public void onCheckInitialized(final Check check)
-	{
-		SpringInjector.get().inject(check);
+    public void onCheckInitialized(final Check check) {
+        SpringInjector.get().inject(check);
 
-		if (check instanceof CheckWithCheck)
-		{
-			final CheckWithCheck checkWith = (CheckWithCheck) check;
-			SpringInjector.get().inject(checkWith.getSimpleCheck());
-		}
-	}
+        if (check instanceof CheckWithCheck) {
+            final CheckWithCheck checkWith = (CheckWithCheck) check;
+            SpringInjector.get().inject(checkWith.getSimpleCheck());
+        }
+    }
 }

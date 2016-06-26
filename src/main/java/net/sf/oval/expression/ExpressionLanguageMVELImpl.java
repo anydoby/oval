@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2015 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  *
  * All Rights Reserved. This program and the accompanying materials
@@ -23,28 +23,22 @@ import org.mvel2.MVEL;
 /**
  * @author Sebastian Thomschke
  */
-public class ExpressionLanguageMVELImpl extends AbstractExpressionLanguage
-{
-	private static final Log LOG = Log.getLog(ExpressionLanguageMVELImpl.class);
+public class ExpressionLanguageMVELImpl extends AbstractExpressionLanguage {
+    private static final Log LOG = Log.getLog(ExpressionLanguageMVELImpl.class);
 
-	private final ObjectCache<String, Object> expressionCache = new ObjectCache<String, Object>();
+    private final ObjectCache<String, Object> expressionCache = new ObjectCache<String, Object>();
 
-	public Object evaluate(final String expression, final Map<String, ? > values) throws ExpressionEvaluationException
-	{
-		LOG.debug("Evaluating MVEL expression: {1}", expression);
-		try
-		{
-			Object expr = expressionCache.get(expression);
-			if (expr == null)
-			{
-				expr = MVEL.compileExpression(expression);
-				expressionCache.put(expression, expr);
-			}
-			return MVEL.executeExpression(expr, values);
-		}
-		catch (final Exception ex)
-		{
-			throw new ExpressionEvaluationException("Evaluating MVEL expression failed: " + expression, ex);
-		}
-	}
+    public Object evaluate(final String expression, final Map<String, ?> values) throws ExpressionEvaluationException {
+        LOG.debug("Evaluating MVEL expression: {1}", expression);
+        try {
+            Object expr = expressionCache.get(expression);
+            if (expr == null) {
+                expr = MVEL.compileExpression(expression);
+                expressionCache.put(expression, expr);
+            }
+            return MVEL.executeExpression(expr, values);
+        } catch (final Exception ex) {
+            throw new ExpressionEvaluationException("Evaluating MVEL expression failed: " + expression, ex);
+        }
+    }
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2012 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  * 
  * All Rights Reserved. This program and the accompanying materials
@@ -19,14 +19,12 @@ import java.io.Serializable;
  *
  * @author Sebastian Thomschke
  */
-public abstract class OValContext implements Serializable
-{
-	private static final long serialVersionUID = 1L;
+public abstract class OValContext implements Serializable {
+    private static final long serialVersionUID = 1L;
 
-	protected Class< ? > compileTimeType;
+    protected Class<?> compileTimeType;
 
-	public Class< ? > getCompileTimeType()
-	{
-		return compileTimeType;
-	}
+    public Class<?> getCompileTimeType() {
+        return compileTimeType;
+    }
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2011 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  * 
  * All Rights Reserved. This program and the accompanying materials
@@ -17,38 +17,33 @@ import java.util.Collection;
 /**
  * @author Sebastian Thomschke
  */
-public class ConstraintSet
-{
-	private Collection<Check> checks;
+public class ConstraintSet {
+    private Collection<Check> checks;
 
-	private final String id;
+    private final String id;
 
-	public ConstraintSet(final String id)
-	{
-		this.id = id;
-	}
+    public ConstraintSet(final String id) {
+        this.id = id;
+    }
 
-	/**
-	 * @return the checks
-	 */
-	public Collection<Check> getChecks()
-	{
-		return checks;
-	}
+    /**
+     * @return the checks
+     */
+    public Collection<Check> getChecks() {
+        return checks;
+    }
 
-	/**
-	 * @return the id
-	 */
-	public String getId()
-	{
-		return id;
-	}
+    /**
+     * @return the id
+     */
+    public String getId() {
+        return id;
+    }
 
-	/**
-	 * @param checks the checks to set
-	 */
-	public void setChecks(final Collection<Check> checks)
-	{
-		this.checks = checks;
-	}
+    /**
+     * @param checks the checks to set
+     */
+    public void setChecks(final Collection<Check> checks) {
+        this.checks = checks;
+    }
 }

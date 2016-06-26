@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2011 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  * 
  * All Rights Reserved. This program and the accompanying materials
@@ -17,13 +17,10 @@ import net.sf.oval.internal.MessageRenderer;
 /**
  * @author Sebastian Thomschke
  */
-public class UndefinedConstraintSetException extends InvalidConfigurationException
-{
-	private static final long serialVersionUID = 1L;
+public class UndefinedConstraintSetException extends InvalidConfigurationException {
+    private static final long serialVersionUID = 1L;
 
-	public UndefinedConstraintSetException(final String contraintSetId)
-	{
-		super(MessageRenderer.renderMessage("net.sf.oval.exception.UndefinedConstraintSetException.message",
-				"contraintSetId", contraintSetId));
-	}
+    public UndefinedConstraintSetException(final String contraintSetId) {
+        super(MessageRenderer.renderMessage("net.sf.oval.exception.UndefinedConstraintSetException.message", "contraintSetId", contraintSetId));
+    }
 }

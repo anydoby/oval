@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2013 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  *
  * All Rights Reserved. This program and the accompanying materials
@@ -18,13 +18,11 @@ package net.sf.oval.exception;
  *
  * @author Sebastian Thomschke
  */
-public interface ExceptionTranslator
-{
-	/**
-	 * If this method returns null, the original exception is thrown.
-	 *
-	 * @param ex
-	 * @return the exception to throw
-	 */
-	RuntimeException translateException(final OValException ex);
+public interface ExceptionTranslator {
+    /**
+     * If this method returns null, the original exception is thrown.
+     *
+     * @return the exception to throw
+     */
+    RuntimeException translateException(final OValException ex);
 }

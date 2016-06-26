@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Portions created by Sebastian Thomschke are copyright (c) 2005-2011 Sebastian
+ * Portions created by Sebastian Thomschke are copyright (c) 2005-2016 Sebastian
  * Thomschke.
  *
  * All Rights Reserved. This program and the accompanying materials
@@ -19,41 +19,46 @@ import java.util.Set;
 /**
  * @author Sebastian Thomschke
  */
-public interface CollectionFactory
-{
-	/**
-	 * Instantiate an ArrayList like list object
-	 * @return a new list
-	 */
-	<ValueType> List<ValueType> createList();
+public interface CollectionFactory {
+    /**
+     * Instantiate an ArrayList like list object
+     * 
+     * @return a new list
+     */
+    <ValueType> List<ValueType> createList();
 
-	/**
-	 * Instantiate an ArrayList like list object
-	 * @return a new list
-	 */
-	<ValueType> List<ValueType> createList(int initialCapacity);
+    /**
+     * Instantiate an ArrayList like list object
+     * 
+     * @return a new list
+     */
+    <ValueType> List<ValueType> createList(int initialCapacity);
 
-	/**
-	 * Instantiate a HashMap like map object
-	 * @return a new map
-	 */
-	<KeyType, ValueType> Map<KeyType, ValueType> createMap();
+    /**
+     * Instantiate a HashMap like map object
+     * 
+     * @return a new map
+     */
+    <KeyType, ValueType> Map<KeyType, ValueType> createMap();
 
-	/**
-	 * Instantiate a HashMap like map object
-	 * @return a new map
-	 */
-	<KeyType, ValueType> Map<KeyType, ValueType> createMap(int initialCapacity);
+    /**
+     * Instantiate a HashMap like map object
+     * 
+     * @return a new map
+     */
+    <KeyType, ValueType> Map<KeyType, ValueType> createMap(int initialCapacity);
 
-	/**
-	 * Instantiate a HashSet like set object
-	 * @return a new set
-	 */
-	<ValueType> Set<ValueType> createSet();
+    /**
+     * Instantiate a HashSet like set object
+     * 
+     * @return a new set
+     */
+    <ValueType> Set<ValueType> createSet();
 
-	/**
-	 * Instantiate a HashSet like set object
-	 * @return a new set
-	 */
-	<ValueType> Set<ValueType> createSet(int initialCapacity);
+    /**
+     * Instantiate a HashSet like set object
+     * 
+     * @return a new set
+     */
+    <ValueType> Set<ValueType> createSet(int initialCapacity);
 }
